@@ -1,0 +1,103 @@
+akonadi
+------------------------------------------
+Akonadi is a PIM layer, which provides an asynchronous API to access 
+all kind of PIM data (e.g. mails, contacts, events, todos etc.).
+
+It consists of several processes (generally called the Akonadi server) 
+and a library (called client library) which encapsulates the 
+communication between the client and the server.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  libQtCore4-4.4.0-1
+  libQtDBus4-4.4.0-1
+  libQtNetwork4-4.4.0-1
+  libQtSql4-4.4.0-1
+  libQtXml4-4.4.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  automoc4-0.9.84-1
+  binutils-20080523-2
+  cygport-0.3.13-1
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  make-3.81-1
+
+Canonical website:
+  http://pim.kde.org/akonadi/
+
+Canonical download:
+  http://websvn.kde.org/branches/akonadi/1.0/
+
+-------------------------------------------
+
+Build instructions:
+  unpack akonadi-1.0.0-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./akonadi-1.0.0-X.cygport all
+
+This will create:
+  /usr/src/akonadi-1.0.0-X-src.tar.bz2
+  /usr/src/akonadi-1.0.0-X.tar.bz2
+  /usr/src/akonadi-1.0.0-X.tar.bz2
+  /usr/src/libakonadiprivate-devel-1.0.0-X.tar.bz2
+  /usr/src/libakonadiprivate1-1.0.0-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(akonadi)
+  /etc/postinstall/akonadi.sh
+  /usr/bin/akonadi_control.exe
+  /usr/bin/akonadictl.exe
+  /usr/bin/akonadiserver.exe
+  /usr/share/dbus-1/services/org.freedesktop.Akonadi.Control.service
+  /usr/share/doc/akonadi-1.0.0/AUTHORS
+  /usr/share/doc/akonadi-1.0.0/ChangeLog
+  /usr/share/doc/akonadi-1.0.0/INSTALL
+  /usr/share/doc/akonadi-1.0.0/NEWS
+  /usr/share/doc/akonadi-1.0.0/README
+  /usr/share/kde4/config/akonadi/mysql-global.conf
+  /usr/share/mime/packages/akonadi-mime.xml
+
+(libakonadiprivate1)
+  /usr/bin/cygakonadiprivate-1.dll
+  /usr/bin/cygakonadiprotocolinternals-1.dll
+
+(libakonadiprivate-devel)
+  /usr/include/akonadi/private/akonadiprotocolinternals_export.h
+  /usr/include/akonadi/private/imapparser_p.h
+  /usr/include/akonadi/private/imapset_p.h
+  /usr/include/akonadi/private/notificationmessage_p.h
+  /usr/include/akonadi/private/protocol_p.h
+  /usr/include/akonadi/private/xdgbasedirs_p.h
+  /usr/lib/libakonadiprivate.dll.a
+  /usr/lib/libakonadiprotocolinternals.dll.a
+  /usr/lib/pkgconfig/akonadi.pc
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

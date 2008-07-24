@@ -1,0 +1,12 @@
+SVN_URI="svn://anonsvn.kde.org/home/kde"
+SVN_BRANCH="branches/akonadi/1.0"
+SVN_MODULE=${PN}
+SVN_REV=836719
+inherit qt4 cmake svn
+
+abi=1
+PKG_NAMES="${PN} lib${PN}private${abi} lib${PN}private-devel"
+PKG_HINTS="bin lib devel"
+PKG_CONTENTS[0]="--exclude=interfaces etc/ usr/bin/*.exe usr/share/"
+PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
+PKG_CONTENTS[2]="usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
