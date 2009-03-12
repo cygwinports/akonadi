@@ -1,5 +1,5 @@
 category: Database KDE
-requires: cygwin libQtCore4 libQtDBus4 libQtNetwork4 libQtSql4 libQtXml4
+requires: cygwin libboost_program-options1.37 libQtCore4 libQtDBus4 libQtNetwork4 libQtSql4 libQtXml4
 external-source: akonadi
 sdesc: "Qt4 PIM layer (client runtime)"
 ldesc: "Akonadi is a PIM layer, which provides an asynchronous API to 

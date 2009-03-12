@@ -1,7 +1,6 @@
 category: Database KDE
-requires: cygwin libakonadiprivate0 libQtCore4-devel libQtDBus4-devel libQtNetwork4-devel libQtSql4-devel libQtXml4-devel
-external-source: akonadi
-sdesc: "Qt4 PIM layer (client libdevel)"
+requires: cygwin libakonadiprivate1 libQtCore4 libQtDBus4 mysql
+sdesc: "Qt4 PIM layer (server)"
 ldesc: "Akonadi is a PIM layer, which provides an asynchronous API to 
 access all kind of PIM data (e.g. mails, contacts, events, todos etc.).
 It consists of several processes (generally called the Akonadi server)

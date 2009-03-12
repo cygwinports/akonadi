@@ -9,17 +9,19 @@ communication between the client and the server.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  libQtCore4-4.4.0-1
-  libQtDBus4-4.4.0-1
-  libQtNetwork4-4.4.0-1
-  libQtSql4-4.4.0-1
-  libQtXml4-4.4.0-1
+  libboost_program-options1.37-1.37.0-1
+  libQtCore4-4.4.2-1
+  libQtDBus4-4.4.2-1
+  libQtNetwork4-4.4.2-1
+  libQtSql4-4.4.2-1
+  libQtXml4-4.4.2-1
+  mysql
 
 Build requirements:
 (besides corresponding -devel packages)
-  automoc4-0.9.84-1
-  binutils-20080523-2
-  cygport-0.3.13-1
+  automoc4-0.9.88-1
+  binutils-20080624-2
+  cygport-0.4.4-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   make-3.81-1
@@ -28,23 +30,22 @@ Canonical website:
   http://pim.kde.org/akonadi/
 
 Canonical download:
-  http://websvn.kde.org/branches/akonadi/1.0/
+  http://download.akonadi-project.org/
 
 -------------------------------------------
 
 Build instructions:
-  unpack akonadi-1.0.0-X-src.tar.bz2
+  unpack akonadi-1.1.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./akonadi-1.0.0-X.cygport all
+  cygport ./akonadi-1.1.1-X.cygport all
 
 This will create:
-  /usr/src/akonadi-1.0.0-X-src.tar.bz2
-  /usr/src/akonadi-1.0.0-X.tar.bz2
-  /usr/src/akonadi-1.0.0-X.tar.bz2
-  /usr/src/libakonadiprivate-devel-1.0.0-X.tar.bz2
-  /usr/src/libakonadiprivate1-1.0.0-X.tar.bz2
+  /usr/src/akonadi-1.1.1-X-src.tar.bz2
+  /usr/src/akonadi-1.1.1-X.tar.bz2
+  /usr/src/libakonadiprivate-devel-1.1.1-X.tar.bz2
+  /usr/src/libakonadiprivate1-1.1.1-X.tar.bz2
 
 -------------------------------------------
 
@@ -56,11 +57,11 @@ Files included in the binary packages:
   /usr/bin/akonadictl.exe
   /usr/bin/akonadiserver.exe
   /usr/share/dbus-1/services/org.freedesktop.Akonadi.Control.service
-  /usr/share/doc/akonadi-1.0.0/AUTHORS
-  /usr/share/doc/akonadi-1.0.0/ChangeLog
-  /usr/share/doc/akonadi-1.0.0/INSTALL
-  /usr/share/doc/akonadi-1.0.0/NEWS
-  /usr/share/doc/akonadi-1.0.0/README
+  /usr/share/doc/akonadi-1.1.1/AUTHORS
+  /usr/share/doc/akonadi-1.1.1/ChangeLog
+  /usr/share/doc/akonadi-1.1.1/INSTALL
+  /usr/share/doc/akonadi-1.1.1/NEWS
+  /usr/share/doc/akonadi-1.1.1/README
   /usr/share/kde4/config/akonadi/mysql-global.conf
   /usr/share/mime/packages/akonadi-mime.xml
 
@@ -94,6 +95,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 1.1.1-1 -----
+Version bump for KDE 4.2.
 
 ----- version 1.0.0-1 -----
 Initial release for Cygwin.
