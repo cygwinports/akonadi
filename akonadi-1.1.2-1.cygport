@@ -1,0 +1,12 @@
+inherit qt4-cmake
+
+DESCRIPTION="KDE4 PIM storage service"
+HOMEPAGE="http://pim.kde.org/akonadi/"
+SRC_URI="http://download.akonadi-project.org/${P}.tar.bz2"
+PATCH_URI="1.0.0-kde4-install.patch"
+
+PKG_NAMES="${PN} lib${PN}protocolinternals1 lib${PN}protocolinternals-devel"
+akonadi_CONTENTS="--exclude=interfaces etc/ usr/bin/*.exe
+                  usr/bin/cygakonadiprivate-*.dll usr/share/"
+libakonadiprotocolinternals1_CONTENTS="usr/bin/cygakonadiprotocolinternals-1.dll"
+libakonadiprotocolinternals_devel_CONTENTS="usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
