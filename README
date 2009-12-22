@@ -8,24 +8,25 @@ and a library (called client library) which encapsulates the
 communication between the client and the server.
 
 Runtime requirements:
-  cygwin-1.7.0-50
-  libboost1.37-1.37.0-10
-  libgcc1-4.3.2-2
-  libQtCore4-4.5.1-1
-  libQtDBus4-4.5.1-1
-  libQtNetwork4-4.5.1-1
-  libQtSql4-4.5.1-1
-  libQtXml4-4.5.1-1
-  libstdc++6-4.3.2-2
+  cygwin-1.7.0-67
+  libboost1.40-1.40.0-1
+  libgcc1-4.3.4-3
+  libQtCore4-4.5.3-1
+  libQtDBus4-4.5.3-1
+  libQtNetwork4-4.5.3-1
+  libQtSql4-4.5.3-1
+  libQtXml4-4.5.3-1
+  libsoprano4-2.2.4-1
+  libstdc++6-4.3.4-3
   mysql
 
 Build requirements:
 (besides corresponding -devel packages)
   automoc4-0.9.88-1
-  binutils-20080624-2
-  cygport-0.9.7-1
-  gcc4-core-4.3.2-2
-  gcc4-g++-4.3.2-2
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
   make-3.81-2
   pkg-config-0.23b-10
 
@@ -38,65 +39,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack akonadi-1.1.2-X-src.tar.bz2
+  unpack akonadi-1.2.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./akonadi-1.1.2-X.cygport all
+  cygport ./akonadi-1.2.1-X.cygport all
 
 This will create:
-  /usr/src/akonadi-1.1.2-X-src.tar.bz2
-  /usr/src/akonadi-1.1.2-X.tar.bz2
-  /usr/src/libakonadiprotocolinternals-devel-1.1.2-X.tar.bz2
-  /usr/src/libakonadiprotocolinternals1-1.1.2-X.tar.bz2
+  /usr/src/akonadi-1.2.1-X-src.tar.bz2
+  /usr/src/akonadi-1.2.1-X.tar.bz2
+  /usr/src/libakonadiprotocolinternals-devel-1.2.1-X.tar.bz2
+  /usr/src/libakonadiprotocolinternals1-1.2.1-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(akonadi)
-  /etc/postinstall/akonadi.sh
-  /usr/bin/akonadi_control.exe
-  /usr/bin/akonadictl.exe
-  /usr/bin/akonadiserver.exe
-  /usr/bin/cygakonadiprivate-1.dll
-  /usr/share/dbus-1/services/org.freedesktop.Akonadi.Control.service
-  /usr/share/doc/akonadi/AUTHORS
-  /usr/share/doc/akonadi/ChangeLog
-  /usr/share/doc/akonadi/NEWS
-  /usr/share/doc/akonadi/README
-  /usr/share/kde4/config/akonadi/mysql-global.conf
-  /usr/share/mime/packages/akonadi-mime.xml
-
-(libakonadiprotocolinternals1)
-  /usr/bin/cygakonadiprotocolinternals-1.dll
-
-(libakonadiprotocolinternals-devel)
-  /usr/include/akonadi/private/akonadiprotocolinternals_export.h
-  /usr/include/akonadi/private/imapparser_p.h
-  /usr/include/akonadi/private/imapset_p.h
-  /usr/include/akonadi/private/notificationmessage_p.h
-  /usr/include/akonadi/private/protocol_p.h
-  /usr/include/akonadi/private/xdgbasedirs_p.h
-  /usr/lib/libakonadiprivate.dll.a
-  /usr/lib/libakonadiprotocolinternals.dll.a
-  /usr/lib/pkgconfig/akonadi.pc
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
-  /usr/share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
-
-------------------
-
 Port Notes:
+
+----- version 1.2.1-1 -----
+Version bump for KDE 4.3.
 
 ----- version 1.1.2-1 -----
 Initial release of KDE 4.2 for Cygwin 1.7.
