@@ -1,0 +1,17 @@
+--- origsrc/akonadi-1.2.1/AkonadiConfig.cmake.in	2009-08-28 09:20:03.000000000 -0500
++++ src/akonadi-1.2.1/AkonadiConfig.cmake.in	2010-01-06 01:12:16.527647300 -0600
+@@ -23,12 +23,10 @@ set(AKONADI_SHARE_DIR            "@SHARE
+ set(AKONADI_XDG_MIME_INSTALL_DIR "@AKONADI_XDG_MIME_DIR@")
+ 
+ # Compatibility
+-if(WIN32)
+-if(MINGW)
++if(MINGW OR CYGWIN)
+   set(AKONADI_COMMON_LIBRARIES     "@AKONADI_LIB_DIR@/libakonadiprotocolinternals.dll.a")
+-else(MINGW)
++elseif(WIN32)
+   set(AKONADI_COMMON_LIBRARIES     "@AKONADI_LIB_DIR@/akonadiprotocolinternals.lib")
+-endif(MINGW)
+ elseif(APPLE)
+   set(AKONADI_COMMON_LIBRARIES     "@AKONADI_LIB_DIR@/libakonadiprotocolinternals.dylib")
+ else()
