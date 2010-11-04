@@ -3,14 +3,18 @@ inherit qt4-cmake
 DESCRIPTION="KDE4 PIM storage service"
 HOMEPAGE="http://pim.kde.org/akonadi/"
 SRC_URI="http://download.akonadi-project.org/${P}.tar.bz2"
-PATCH_URI="1.2.1-kde4-install.patch
-           1.2.1-AkonadiConfig.cmake.patch"
+
+PATCH_URI="
+	1.2.1-kde4-install.patch
+	1.2.1-AkonadiConfig.cmake.patch
+	1.4.1-qsqlite3-cmake.patch
+"
 
 PKG_NAMES="${PN} lib${PN}protocolinternals1 lib${PN}protocolinternals-devel"
 akonadi_CONTENTS="--exclude=interfaces etc/ usr/bin/*.exe
-                  usr/bin/cygakonadiprivate-*.dll usr/share/"
+                  usr/bin/cygakonadiprivate-*.dll ${QT4_PLUGINSDIR#/} usr/share/"
 libakonadiprotocolinternals1_CONTENTS="usr/bin/cygakonadiprotocolinternals-1.dll"
-libakonadiprotocolinternals_devel_CONTENTS="usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
+libakonadiprotocolinternals_devel_CONTENTS="--exclude=qt4 usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
 
 src_install() {
 	cd ${B}
@@ -18,6 +22,6 @@ src_install() {
 
 	cat > ${D}/usr/share/kde4/config/akonadi/akonadiserverrc <<-EOF
 [%General]
-Driver=QMYSQL
+Driver=QSQLITE3
 EOF
 }
