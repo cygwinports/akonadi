@@ -1,5 +1,5 @@
 category: KDE
-requires: libakonadiprotocolinternals1 libboost1.43 libgcc1 libQtCore4 libQtDBus4 libQtNetwork4 libQtSql4 libQtXml4 libsqlite3_0 libstdc++6
+requires: libakonadiprotocolinternals1 libboost1.46.1 libgcc1 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtSql4 libQtXml4 libsoprano4 libsqlite3_0 libstdc++6
 sdesc: "Qt4 PIM layer (server)"
 ldesc: "Akonadi is a PIM layer, which provides an asynchronous API to 
 access all kind of PIM data (e.g. mails, contacts, events, todos etc.).

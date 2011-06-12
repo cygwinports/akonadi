@@ -6,22 +6,12 @@ SRC_URI="http://download.akonadi-project.org/${P}.tar.bz2"
 
 PATCH_URI="
 	1.2.1-kde4-install.patch
-	1.2.1-AkonadiConfig.cmake.patch
-	1.4.1-qsqlite3-cmake.patch
 "
 
 PKG_NAMES="${PN} lib${PN}protocolinternals1 lib${PN}protocolinternals-devel"
-akonadi_CONTENTS="--exclude=interfaces etc/ usr/bin/*.exe
-                  usr/bin/cygakonadiprivate-*.dll ${QT4_PLUGINSDIR#/} usr/share/"
+akonadi_CONTENTS="--exclude=interfaces etc/ usr/bin/*.exe usr/share/"
 libakonadiprotocolinternals1_CONTENTS="usr/bin/cygakonadiprotocolinternals-1.dll"
 libakonadiprotocolinternals_devel_CONTENTS="--exclude=qt4 usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
+PKG_IGNORE="${QT4_PLUGINSDIR#/}/sqldrivers/*.a"
 
-src_install() {
-	cd ${B}
-	cyginstall
-
-	cat > ${D}/usr/share/kde4/config/akonadi/akonadiserverrc <<-EOF
-[%General]
-Driver=QSQLITE3
-EOF
-}
+CYGCMAKE_ARGS="-DDATABASE_BACKEND=SQLITE -DAKONADI_STATIC_SQLITE=TRUE"
