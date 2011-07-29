@@ -2,7 +2,7 @@ inherit qt4-cmake
 
 DESCRIPTION="KDE4 PIM storage service"
 HOMEPAGE="http://pim.kde.org/akonadi/"
-SRC_URI="http://download.akonadi-project.org/${P}.tar.bz2"
+SRC_URI="mirror://kde/stable/${PN}/src/${P}.tar.bz2"
 
 PATCH_URI="
 	1.2.1-kde4-install.patch
