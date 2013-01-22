@@ -1,6 +1,15 @@
 inherit qt4-cmake
 
-DESCRIPTION="KDE4 PIM storage service"
+NAME="akonadi"
+VERSION=1.7.2
+RELEASE=2
+CATEGORY="KDE"
+SUMMARY="Qt4 PIM layer (server)"
+DESCRIPTION="Akonadi is a PIM layer, which provides an asynchronous API to
+access all kind of PIM data (e.g. mails, contacts, events, todos etc.). It
+consists of several processes (generally called the Akonadi server) and a
+library (called client library) which encapsulates the communication between
+the client and the server."
 HOMEPAGE="http://pim.kde.org/akonadi/"
 SRC_URI="mirror://kde/stable/${PN}/src/${P}.tar.bz2"
 
