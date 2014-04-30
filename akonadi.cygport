@@ -1,7 +1,7 @@
 inherit qt4-cmake
 
 NAME="akonadi"
-VERSION=1.10.3
+VERSION=1.12.1
 RELEASE=1
 CATEGORY="KDE"
 SUMMARY="Qt4 PIM layer"
@@ -11,8 +11,9 @@ consists of several processes (generally called the Akonadi server) and a
 library (called client library) which encapsulates the communication between
 the client and the server."
 HOMEPAGE="http://pim.kde.org/akonadi/"
-SRC_URI="mirror://kde/stable/akonadi/src/akonadi-${VERSION}-1.tar.bz2"
+SRC_URI="mirror://kde/stable/akonadi/src/akonadi-${VERSION}.tar.bz2"
 PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/akonadi.git/plain/0001-remove-invalid-part-before-parttable-migration.patch?h=f20
 	1.2.1-kde4-install.patch
 "
 
@@ -31,3 +32,5 @@ CYGCMAKE_ARGS="
 	-DMYSQLD_EXECUTABLE=/usr/sbin/mysqld
 	-DPOSTGRES_PATH=/usr/sbin
 "
+# for KDE 4.13:
+#	-DWITH_SOPRANO=OFF
