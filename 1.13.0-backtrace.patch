@@ -1,0 +1,11 @@
+--- origsrc/akonadi-1.13.0/shared/akcrash.cpp	2014-08-10 05:38:58.000000000 -0500
++++ src/akonadi-1.13.0/shared/akcrash.cpp	2014-11-18 13:31:57.529654300 -0600
+@@ -39,7 +39,7 @@ QString akBacktrace()
+   QString s;
+ 
+ /* FIXME: is there an equivalent for windows? */
+-#ifdef Backtrace_FOUND
++#if Backtrace_FOUND
+   void *trace[256];
+   int n = backtrace( trace, 256 );
+   if ( !n ) {

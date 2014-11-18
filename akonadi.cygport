@@ -1,8 +1,8 @@
 inherit qt4-cmake
 
 NAME="akonadi"
-VERSION=1.12.1
-RELEASE=3
+VERSION=1.13.0
+RELEASE=1
 CATEGORY="KDE"
 SUMMARY="Qt4 PIM layer"
 DESCRIPTION="Akonadi is a PIM layer, which provides an asynchronous API to
@@ -13,9 +13,9 @@ the client and the server."
 HOMEPAGE="http://pim.kde.org/akonadi/"
 SRC_URI="mirror://kde/stable/akonadi/src/akonadi-${VERSION}.tar.bz2"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/akonadi.git/plain/0001-remove-invalid-part-before-parttable-migration.patch?h=f20
 	1.2.1-kde4-install.patch
 	1.12.1-cygwin.patch
+	1.13.0-backtrace.patch
 "
 
 PKG_NAMES="${NAME} lib${NAME}protocolinternals1 lib${NAME}protocolinternals-devel"
