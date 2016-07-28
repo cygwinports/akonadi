@@ -2,7 +2,7 @@ inherit qt4-cmake
 
 NAME="akonadi"
 VERSION=1.13.0
-RELEASE=3
+RELEASE=4
 CATEGORY="KDE"
 SUMMARY="Qt4 PIM layer"
 DESCRIPTION="Akonadi is a PIM layer, which provides an asynchronous API to
@@ -19,13 +19,24 @@ PATCH_URI="
 "
 
 PKG_NAMES="${NAME} lib${NAME}protocolinternals1 lib${NAME}protocolinternals-devel"
-akonadi_CONTENTS="--exclude=interfaces etc/ usr/bin/*.exe ${QT4_PLUGINSDIR#/}/sqldrivers/*.dll usr/share/"
+akonadi_CONTENTS="
+	--exclude=interfaces
+	usr/bin/*.exe
+	${QT4_PLUGINSDIR#/}/sqldrivers/*.dll
+	usr/share/
+"
 libakonadiprotocolinternals1_CATEGORY="Libs"
 libakonadiprotocolinternals1_CONTENTS="usr/bin/cygakonadiprotocolinternals-1.dll"
 libakonadiprotocolinternals_devel_CATEGORY="Libs"
-libakonadiprotocolinternals_devel_CONTENTS="--exclude=qt4 usr/include/ usr/lib/ usr/share/dbus-1/interfaces/"
+libakonadiprotocolinternals_devel_CONTENTS="
+	--exclude=qt4
+	usr/include/
+	usr/lib/
+	usr/share/dbus-1/interfaces/
+"
 PKG_IGNORE="${QT4_PLUGINSDIR#/}/sqldrivers/*.a"
 
+CPPFLAGS+=" -D_DEFAULT_SOURCE"
 CYGCMAKE_ARGS="
 	-DDATABASE_BACKEND=SQLITE
 	-DAKONADI_STATIC_SQLITE=FALSE
