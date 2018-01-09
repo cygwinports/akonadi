@@ -2,7 +2,7 @@ inherit qt4-cmake
 
 NAME="akonadi"
 VERSION=1.13.0
-RELEASE=5
+RELEASE=6
 CATEGORY="KDE"
 SUMMARY="Qt4 PIM layer"
 DESCRIPTION="Akonadi is a PIM layer, which provides an asynchronous API to
