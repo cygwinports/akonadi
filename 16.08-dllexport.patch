@@ -1,0 +1,22 @@
+--- origsrc/akonadi-16.08.3/autotests/private/CMakeLists.txt	2016-10-14 00:25:00.000000000 -0500
++++ src/akonadi-16.08.3/autotests/private/CMakeLists.txt	2017-02-16 22:42:12.485953400 -0600
+@@ -27,7 +27,7 @@ add_unit_test(akstandarddirstest.cpp)
+ add_unit_test(akdbustest.cpp)
+ add_unit_test(notificationmessagetest.cpp)
+ add_unit_test(externalpartstoragetest.cpp)
+-if (NOT MSVC)
++if (NOT WIN32 AND NOT CYGWIN)
+     # TODO: Make compile on Windows, right now it
+     # causes some weird linking issues.
+     add_unit_test(protocoltest.cpp)
+--- origsrc/akonadi-17.12.3/src/private/CMakeLists.txt	2018-03-05 04:14:26.000000000 -0600
++++ src/akonadi-17.12.3/src/private/CMakeLists.txt	2018-03-13 09:51:01.125197200 -0500
+@@ -25,7 +25,7 @@ set(akonadiprivate_SRCS
+ 
+ ecm_qt_declare_logging_category(akonadiprivate_SRCS HEADER akonadiprivate_debug.h IDENTIFIER AKONADIPRIVATE_LOG CATEGORY_NAME org.kde.pim.akonadiprivate)
+ 
+-if (WIN32)
++if (WIN32 OR CYGWIN)
+     # MSVC does not like when the same object files are reused for shared and
+     # static linking, so in this case we build all sources twice to make it happy
+     set(akonadiprivate_buildsources ${akonadiprivate_SRCS})

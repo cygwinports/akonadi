@@ -1,0 +1,11 @@
+--- origsrc/akonadi-16.08.3/src/qsqlite/CMakeLists.txt	2016-10-14 00:25:00.000000000 -0500
++++ src/akonadi-16.08.3/src/qsqlite/CMakeLists.txt	2017-02-16 22:53:29.959658500 -0600
+@@ -15,7 +15,7 @@ include_directories(
+     ${SQLITE_INCLUDE_DIR}
+ )
+ 
+-add_library(qsqlite3 SHARED ${QSqlite_SRCS} ${QSqlite_MOC_SRCS})
++add_library(qsqlite3 MODULE ${QSqlite_SRCS} ${QSqlite_MOC_SRCS})
+ 
+ target_link_libraries(qsqlite3
+     Qt5::Core

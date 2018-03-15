@@ -1,47 +1,57 @@
-inherit qt4-cmake
+inherit kf5
 
 NAME="akonadi"
-VERSION=1.13.0
-RELEASE=6
+VERSION=17.12.3
+RELEASE=1
 CATEGORY="KDE"
-SUMMARY="Qt4 PIM layer"
+SUMMARY="KDE PIM layer"
 DESCRIPTION="Akonadi is a PIM layer, which provides an asynchronous API to
 access all kind of PIM data (e.g. mails, contacts, events, todos etc.). It
 consists of several processes (generally called the Akonadi server) and a
 library (called client library) which encapsulates the communication between
 the client and the server."
 HOMEPAGE="http://pim.kde.org/akonadi/"
-SRC_URI="mirror://kde/stable/akonadi/src/akonadi-${VERSION}.tar.bz2"
 PATCH_URI="
-	1.2.1-kde4-install.patch
-	1.12.1-cygwin.patch
-	1.13.0-backtrace.patch
+	16.08-cmake-install.patch
+	16.08-dllexport.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}protocolinternals1 lib${NAME}protocolinternals-devel"
+PKG_NAMES="${NAME} libKF5Akonadi5 libKF5Akonadi-devel"
 akonadi_CONTENTS="
-	--exclude=interfaces
+	etc/postinstall/akonadi.sh
+	etc/xdg/akonadi*
 	usr/bin/*.exe
-	${QT4_PLUGINSDIR#/}/sqldrivers/*.dll
-	usr/share/
+	usr/lib/qt5/plugins/akonadi/
+	usr/lib/qt5/plugins/sqldrivers/
+	usr/share/akonadi/
+	usr/share/config.kcfg/resourcebase.kcfg
+	usr/share/dbus-1/services/org.freedesktop.Akonadi.Control.service
+	usr/share/doc/akonadi/
+	usr/share/icons/hicolor/*/apps/akonadi.*
+	usr/share/kf5/akonadi_*/
+	usr/share/locale/*/LC_MESSAGES/akonadi_knut_resource.mo
+	usr/share/mime/packages/akonadi-mime.xml
 "
-libakonadiprotocolinternals1_CATEGORY="Libs"
-libakonadiprotocolinternals1_CONTENTS="usr/bin/cygakonadiprotocolinternals-1.dll"
-libakonadiprotocolinternals_devel_CATEGORY="Libs"
-libakonadiprotocolinternals_devel_CONTENTS="
-	--exclude=qt4
-	usr/include/
-	usr/lib/
+libKF5Akonadi5_CATEGORY="Libs"
+libKF5Akonadi5_CONTENTS="
+	usr/bin/cygKF5Akonadi*-5.dll
+	usr/share/locale/*/LC_MESSAGES/libakonadi5.mo
+"
+libKF5Akonadi_devel_CATEGORY="Libs"
+libKF5Akonadi_devel_CONTENTS="
+	usr/include/KF5/[Aa]konadi*
+	usr/lib/cmake/KF5Akonadi/
+	usr/lib/libKF5Akonadi*
+	usr/lib/qt5/mkspecs/modules/qt_Akonadi*.pri
+	usr/lib/qt5/plugins/designer/
 	usr/share/dbus-1/interfaces/
+	usr/share/kdevappwizard/templates/akonadi*
+	usr/share/kf5/akonadi/
 "
-PKG_IGNORE="${QT4_PLUGINSDIR#/}/sqldrivers/*.a"
 
 CPPFLAGS+=" -D_DEFAULT_SOURCE"
 CYGCMAKE_ARGS="
 	-DDATABASE_BACKEND=SQLITE
-	-DAKONADI_STATIC_SQLITE=FALSE
-	-DINSTALL_QSQLITE_IN_QT_PREFIX=TRUE
 	-DMYSQLD_EXECUTABLE=/usr/sbin/mysqld
 	-DPOSTGRES_PATH=/usr/sbin
-	-DWITH_SOPRANO=OFF
 "
